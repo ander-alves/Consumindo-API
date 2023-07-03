@@ -21,7 +21,7 @@ public class Titulo implements Comparable<Titulo> {
     public Titulo(TituloOmdb meuTituloOmdb) {
         this.nome = meuTituloOmdb.title();
 
-        if(meuTituloOmdb.year().length() > 4) {
+        if (meuTituloOmdb.year().length() > 4) {
             throw new ErroDeConversaoDeAnoException("Não consegui converter o ano porque tem mais de 04 caracteres.");
         }
         this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
@@ -64,17 +64,17 @@ public class Titulo implements Comparable<Titulo> {
         this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
-    public void exibeFichaTecnica(){
+    public void exibeFichaTecnica() {
         System.out.println("Nome do filme: " + nome);
         System.out.println("Ano de lançamento: " + anoDeLancamento);
     }
 
-    public void avalia(double nota){
+    public void avalia(double nota) {
         somaDasAvaliacoes += nota;
         totalDeAvaliacoes++;
     }
 
-    public double pegaMedia(){
+    public double pegaMedia() {
         return somaDasAvaliacoes / totalDeAvaliacoes;
     }
 
@@ -86,9 +86,9 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public String toString() {
         return "Titulo{" +
-                "nome='" + nome + '\'' +
-                ", anoDeLancamento=" + anoDeLancamento +
-                ", duracaoEmMinutos=" + duracaoEmMinutos +
+                "Nome= " + nome +
+                " Ano De Lancamento = " + anoDeLancamento +
+                " Duracao Em Minutos = " + duracaoEmMinutos +
                 '}';
     }
 }
